@@ -1,0 +1,5 @@
+Answer the question using only the data that is provided in the data section.
+Do not use any prior knowledge to answer the question.
+Data: Comfortable HVAC temperatures are between 65 and 75 degrees Fahrenheit.
+Question: {{$user_input}}
+Answer:
