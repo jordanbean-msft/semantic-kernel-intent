@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "description": "Given a HVAC question, answer it.",
+  "description": "Given an HVAC question, answer it",
   "execution_settings": {
     "default": {
       "max_tokens": 100,
@@ -13,8 +13,13 @@
     "input_variables": [
     {
       "name": "input",
-      "description": "",
+      "description": "The user's request",
+      "default": ""
+    },
+    {
+      "name": "chat_history",
+      "description": "The chat history",
       "default": ""
     }
   ]
-  }
+}
