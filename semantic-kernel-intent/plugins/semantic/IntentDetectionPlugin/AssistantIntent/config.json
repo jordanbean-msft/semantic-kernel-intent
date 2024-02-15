@@ -20,6 +20,11 @@
       "name": "chat_history",
       "description": "The chat history",
       "default": ""
+    },
+    {
+      "name": "options",
+      "description": "The list of possible intents",
+      "default": ""
     }
   ]
 }

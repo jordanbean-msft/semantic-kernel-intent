@@ -25,24 +25,24 @@ def generate_initial_chat_function(kernel) -> sk.KernelFunctionBase:
     """
 
     req_settings = AzureChatRequestSettings(
-        service_id="chat-gpt",
-        ai_model_id=deployment,
-        max_tokens=2000,
-        temperature=0.7,
-        top_p=0.8,
-        frequency_penalty=0.0,
-        presence_penalty=0.0,
-        number_of_responses=1
-    )
+    service_id="chat-gpt",
+    ai_model_id=deployment,
+    max_tokens=2000,
+    temperature=0.7,
+    top_p=0.8,
+    frequency_penalty=0.0,
+    presence_penalty=0.0,
+    number_of_responses=1
+)
     prompt_config = sk.PromptTemplateConfig(execution_settings=req_settings)
 
     chat_service = sk_oai.AzureChatCompletion(
-        deployment_name=deployment,
-        api_key=api_key,
-        endpoint=endpoint,
-        api_version="2023-12-01-preview",
-        use_extensions=False,
-    )
+    deployment_name=deployment,
+    api_key=api_key,
+    endpoint=endpoint,
+    api_version="2023-12-01-preview",
+    use_extensions=False,
+)
 
     kernel.add_chat_service("chat-gpt", chat_service)
 
@@ -62,12 +62,12 @@ chat_function = generate_initial_chat_function(kernel)
 intent_plugin = kernel.import_semantic_plugin_from_directory(plugins_directory + "/semantic", "IntentDetectionPlugin")
 
 def setup_kernel_for_specific_index(context: sk.KernelContext, kernel: sk.Kernel) -> sk.KernelFunctionBase:
-    if(context.result == "movies"):    
-        chat_function = generate_new_chat_function_using_index(kernel=kernel, index_name="movies")
+    if(context.result == "hvac"):    
+        chat_function = generate_new_chat_function_using_index(kernel=kernel, index_name="hvac")
         return chat_function
     
-    if(context.result == "songs"):
-        chat_function = generate_new_chat_function_using_index(kernel=kernel, index_name="songs")
+    if(context.result == "fire"):
+        chat_function = generate_new_chat_function_using_index(kernel=kernel, index_name="fire")
         return chat_function
     
     raise Exception(f"No function found: {context.result}")

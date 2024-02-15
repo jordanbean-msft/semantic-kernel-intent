@@ -1,0 +1,12 @@
+[Chat History]
+{{$chat_history}}
+
+User: {{$user_input}}
+
+----------------------------------------------
+Provide the intent of the user. The intent should be one of the following:
+- hvac: Use this function to answer questions about HVAC, such as temperature questions
+- fire: Use this function to answer questions about fire
+- not_found: Use this function if you can't find a suitable answer
+
+INTENT:
