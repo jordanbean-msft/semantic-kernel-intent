@@ -20,6 +20,8 @@ We will craft our Intent plugin prompt to allow the OpenAI service to determine 
 
 We are going to provide a list of pre-defined intents (choices) to restrict what can be chosen. We will then switch off this value when the result comes back.
 
+Here is my [blog post](https://jordanbeandev.com/how-to-build-an-azure-openai-intent-plugin-in-semantic-kernel-to-help-orchestrate-which-azure-ai-search-index-to-use/) that goes into more detail.
+
 ## Disclaimer
 
 **THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.**
