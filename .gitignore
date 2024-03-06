@@ -513,3 +513,5 @@ cython_debug/
 .azure/
 
 .vscode/
+
+*_env/

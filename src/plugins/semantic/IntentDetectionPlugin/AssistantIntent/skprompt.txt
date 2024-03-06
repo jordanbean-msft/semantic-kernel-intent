@@ -1,7 +1,7 @@
 [Chat History]
 {{$chat_history}}
 
-User: {{$user_input}}
+User: {{$input}}
 
 ----------------------------------------------
 Return the intent of the user. The intent must be one of the following strings:
