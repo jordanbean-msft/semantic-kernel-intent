@@ -48,8 +48,13 @@ def generate_initial_chat_function(kernel) -> sk.KernelFunction:
         top_p=0.8,
     )
 
+    chat_function = create_chat_function(kernel, req_settings)
+
+    return chat_function
+
+def create_chat_function(kernel, req_settings) -> sk.KernelFunction:
     prompt_template_config = PromptTemplateConfig(
-        template="{{$chat_history}}{{$user_input}}",
+        template="{{$chat_history}}{{$input}}",
         name="chat",
         input_variables=[
             InputVariable(name="input", description="User input", is_required=True),
@@ -63,6 +68,7 @@ def generate_initial_chat_function(kernel) -> sk.KernelFunction:
         function_name="chat",
         prompt_template_config=prompt_template_config
     )
+    
     return chat_function
 
 def setup_kernel_for_specific_index(context: FunctionResult, kernel: sk.Kernel) -> sk.KernelFunction:
@@ -112,21 +118,8 @@ def generate_new_chat_function_using_index(kernel: sk.Kernel, index_name: str) -
     
     kernel.add_service(chat_service)
 
-    prompt_template_config = PromptTemplateConfig(
-        template="{{$chat_history}}{{$input}}",
-        name="chat",
-        input_variables=[
-            InputVariable(name="input", description="User input", is_required=True),
-            InputVariable(name="chat_history", description="The history of the conversation", is_required=True)
-        ],
-        execution_settings=req_settings
-    )
+    chat_function = create_chat_function(kernel, req_settings)
 
-    chat_function = kernel.create_function_from_prompt(
-        plugin_name="chat_bot",
-        function_name="chat",
-        prompt_template_config=prompt_template_config
-    )
     return chat_function
 
 async def chat(chat_history: ChatHistory) -> bool:
