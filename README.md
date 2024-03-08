@@ -44,14 +44,18 @@ Here is my [blog post](https://jordanbeandev.com/how-to-build-an-azure-openai-in
 AZURE_OPENAI_DEPLOYMENT_NAME=""
 AZURE_OPENAI_ENDPOINT=""
 AZURE_OPENAI_API_KEY=""
-AZURE_COGNITIVE_SEARCH_ENDPOINT=""
-AZURE_COGNITIVE_SEARCH_ADMIN_KEY=""
+AZURE_AISEARCH_URL=""
+AZURE_AISEARCH_API_KEY=""
 ```
   
 1. Run the following code to execute the sample app.
 
 ```shell
 cd src
+
+python -m venv ./api_env
+
+./api_env/Scripts/activate
 
 python -m pip install -r requirements.txt
 

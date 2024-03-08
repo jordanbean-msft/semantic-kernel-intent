@@ -2,7 +2,7 @@
   "schema": 1,
   "description": "Given a query and a list of possible intents, detect which intent the input matches",
   "execution_settings": {
-    "default": {
+    "chat-gpt": {
       "max_tokens": 100,
       "temperature": 0.1,
       "top_p": 1.0,
