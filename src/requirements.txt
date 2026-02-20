@@ -1,1 +1,1 @@
-semantic-kernel==0.9.0b1
+semantic-kernel==1.39.4
